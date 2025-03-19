@@ -1,0 +1,5 @@
+smth = input ("Digite algo para saber tudo sobre isso: ")
+print('O tipo primitivo dessa váriavel é ', type(smth))
+print('Essa váriavel é alfanúmerica?',smth.isalnum())
+print('Essa váriavel é númerica?', smth.isnumeric())
+print('Essa váriavel é alfabética?',smth.isalpha())
