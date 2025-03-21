@@ -24,3 +24,17 @@
 #name = input('Digite o seu nome: ')
 #print(name.lower().find('silva'))
 
+#Analisando "A's" em uma frase
+#frase = str(input('Digite uma frase: ')).strip
+#print('A letra "A" aparece {} vezes'.format(frase.lower().count('a')))
+#print('A letra "A" aparece a primera vez na {} casa'.format(frase.lower().find('a')))
+#print('A letra "A" aparece a última vez na {} casa'.format(frase.lower().rfind('a')))
+
+#Pegando o primeiro e último nome
+#name = str(input('Digite seu nome completo: '))
+#newname = name.split()
+#print('O primeiro nome é {}'.format(newname[0]))
+#print('O último nome é {}'.format(newname[-1]))
+
+
+
