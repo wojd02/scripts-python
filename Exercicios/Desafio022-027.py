@@ -36,5 +36,18 @@
 #print('O primeiro nome é {}'.format(newname[0]))
 #print('O último nome é {}'.format(newname[-1]))
 
+#Carro novo ou velho (Aninhado)
+#time = int(input('Quantos anos tem seu carro?: '))
+#if time <= 3:
+#    print('Seu carro é considerado novo')
+#else:
+#    print('Seu carro é considerado velho')
+#print('--FIM DO PROGRAMA--')
+
+#Carro novo ou velho (simplificado)
+time = int(input('Quantos anos tem seu carro?: '))
+print('Carro novo' if time <= 3 else 'carro velho')
+print('--FIM DO PROGRAMA--')
+
 
 
