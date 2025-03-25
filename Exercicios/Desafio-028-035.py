@@ -69,3 +69,8 @@
 #    print('As retas podem formar um triângulo')
 #else:
 #    print('As retas não podem formar um triangulo')
+
+print('\033[0;30;31mteste')
+print('\033[1;30;41mteste 2\033[m')
+print('\033[1;30;46mteste 3\033[m')
+
