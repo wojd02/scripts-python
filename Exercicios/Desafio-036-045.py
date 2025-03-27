@@ -135,14 +135,14 @@
 #    print('O valor do produto fica R${} em {} parcelas de R${}'.format(novo_val_prod, parcelas, novo_val_prod / parcelas))
 
 #PEDRA, PAPEL OU TESOURA - desafio 045 ==================================================================================================================
-import random
-import time
+from random import choice
+from time import sleep
 escolha_usuario = str(input('Já escolhi o meu, qual você escolhe: pedra, papel ou tesoura: '))
 lista_pc = ['pedra', 'papel', 'tesoura']
 
-escolha_pc = random.choice(lista_pc)
+escolha_pc = choice(lista_pc)
 print('Pedra, papel ou tesoura...')
-time.sleep(2)
+sleep(2)
 if escolha_usuario == 'pedra':
     if escolha_pc == 'papel':
         print('Papel, EU VENCI')
