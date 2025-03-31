@@ -30,5 +30,5 @@ while True:
             print('VOCÊ PERDEU!!')
             print('-=-' *20)
             break
-print(f'Você ganhou {cont} vezes seguidas!')
+print(f'Você ganhou {cont} vezes!')
 

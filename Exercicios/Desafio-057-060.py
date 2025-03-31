@@ -61,16 +61,16 @@
 #    cont += 1
 #print('= {}'.format(fat))
 
-n = int(input('Digite um número para calcular seu fatorial: '))
-c = n
-f = 1
-print('Calculando {}!='.format(n), end='')
-while c > 0:
-    print('{}'.format(c), end='')
-    print(' x ' if c> 1 else ' = ', end='')
-    f *= c
-    c -= 1
-print('{}'.format(f))
+#n = int(input('Digite um número para calcular seu fatorial: '))
+#c = n
+#f = 1
+#print('Calculando {}!='.format(n), end='')
+#while c > 0:
+#    print('{}'.format(c), end='')
+#    print(' x ' if c> 1 else ' = ', end='')
+#    f *= c
+#    c -= 1
+#print('{}'.format(f))
 
 #P.A #2 - Desafio 061============================================
 #n = int(input('Digite um número: '))

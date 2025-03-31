@@ -1,9 +1,9 @@
 soma = cont = produto_barato = nome_produto_barato = 0
 decisao = 'S'
 while True:
-    print('-' * 30)
-    print('        SUPER-MERCADÃO')
-    print('-' * 30)
+    print('=' * 30)
+    print('{:^30}'.format('SUPER MERCADÃO'))
+    print('=' * 30)
     if decisao == 'S':
         nome_produto = str(input('Digite o nome do produto: ')).upper()
         preco_produto = float(input('Digite o valor do produto: '))

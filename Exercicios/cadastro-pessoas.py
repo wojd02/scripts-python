@@ -7,7 +7,7 @@ while True:
     print('Cadastre uma pessoa:')
     print('-' * 30)
     if decisao == 'S':
-        sexo = str(input('Qual o sexo da pessoa? [F/M]: ')).upper()
+        sexo = str(input('Qual o sexo da pessoa? [F/M]: ')).upper().strip()[0]
         while sexo not in 'FM':
             print('Decisão inválida, tente novamente!')
             sexo = str(input('Qual o sexo da pessoa? [F/M]: ')).upper()
