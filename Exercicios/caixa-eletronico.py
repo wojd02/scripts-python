@@ -21,23 +21,23 @@ if cedulas_01 != 0:
     print(f'{cedulas_01} cedulas de R$1,00')
 
 # Outra maneira (Resolução Curso em vídeo)
-print('BANCO')
-value = int(input('Qual valor para saque?: '))
-total = value
-total_ced = 0
-ced = 50
-while True:
-    if total >= ced:
-        total -= ced
-        total_ced += 1
-    else:
-        if total > 0:
-            print(f'Total de {total_ced} cédulas de R${ced}')
-        if ced == 50:
-            ced = 20
-        if ced == 20:
-            ced = 10
-        if ced == 10:
-            ced = 1
-        if total == 0:
-            break
+#print('BANCO')
+#value = int(input('Qual valor para saque?: '))
+#total = value
+#total_ced = 0
+#ced = 50
+#while True:
+#    if total >= ced:
+#        total -= ced
+#        total_ced += 1
+#    else:
+#        if total > 0:
+#            print(f'Total de {total_ced} cédulas de R${ced}')
+#        if ced == 50:
+#            ced = 20
+#        if ced == 20:
+#            ced = 10
+#        if ced == 10:
+#            ced = 1
+#        if total == 0:
+#            break
