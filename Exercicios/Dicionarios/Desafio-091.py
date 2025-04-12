@@ -22,3 +22,4 @@ for cont in game: # apresentando os vencedores
 print(f'{'-=' * 9}{'.' *11:^5} {'=-' *9}')
 
 
+
