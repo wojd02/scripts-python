@@ -1,4 +1,8 @@
 def leiaInt(msg):
+    '''
+    >>>A função funciona como um input que verifica e converte o valor digitado em um valor INTEIRO<<<
+    :param msg: A mensagem que o usuário vai visualizar no terminal.
+    '''
     while True:
         try:
             n = int(input(f'{msg}: '))
@@ -11,6 +15,10 @@ def leiaInt(msg):
         else:
             return n
 def leiaFloat(msg):
+    '''
+    >>>A função funciona como um input que verifica e converte o valor digitado em um valor REAL<<<
+    :param msg: A mensagem que o usuário vai visualizar no terminal.
+    '''
     while True:
         try:
             n = float(input(f'{msg}: '))

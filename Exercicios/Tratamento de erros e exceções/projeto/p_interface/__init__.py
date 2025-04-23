@@ -1,4 +1,8 @@
 def menu(lista):
+    '''
+    >>>Faz um menu pesonalizado com uma lista<<<
+    :param lista: Lista que vai mostrar as opções do menu
+    '''
     from projeto import p_dado
     from time import sleep
     c = 1
