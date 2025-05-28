@@ -44,11 +44,11 @@ class ambient:
         print('Closing the ambient...')
         wifi.end()
 
-user = login('admin', '@157796%a')
+user = login('admin', '@157796%')
 session = check_in.check_in_user_data(user)
 connection_db_user = check_in.connect_db(session)
 search = check_in.search_db(session)
-
+print()
 class testing_code(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
