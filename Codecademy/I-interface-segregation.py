@@ -45,6 +45,6 @@ def call_worker (the_worker : worker):
     the_worker.lunch()
 
 people1 = architect()
-people2 = substitute_cook()
+#people2 = substitute_cook()
 
-call_worker(people2)
+call_worker(people1)
