@@ -4,8 +4,8 @@ class Client:
         self.adress = adress
     def adress_catcher(name): #Método
         print(name.adress)
-    def say_id():
-        print('My id is {self.id}')
+    def say_id(self):
+        print(f'My id is {self.id}')
         
 #Criando uma instância
 Kara = Client(1, 'Rua Alameda ANT, n198')
@@ -13,6 +13,7 @@ print(Kara.id) #O output desse comando é um atributo (1)
 print(Kara.adress) #O output desse comando é um atributo ('Rua Alameda ANT, n198')
 
 Client.adress_catcher(Kara) #Utilizando um método da classe Client
+Client.say_id(Kara)
 
 
 #Criando uma sub-classe

@@ -15,9 +15,9 @@ class Aluno(Pessoas):
     def trabalhar(self):
         print('O aluno esta estudando')
 
-aq1 = Pessoas()
+#aq1 = Pessoas()
 aq2 = Aluno()
-aq1.alimentar() #Esse objeto vai ser definido para todas as classes filhas de Pessoas pois não é abstrato
-aq1.trabalhar() #Esse objeto PRECISA ser definido na classe filha, caso contrario vai dar erro pois ela só existe de forma abstrata
+#aq1.alimentar() #Esse objeto vai ser definido para todas as classes filhas de Pessoas pois não é abstrato
+#aq1.trabalhar() #Esse objeto PRECISA ser definido na classe filha, caso contrario vai dar erro pois ela só existe de forma abstrata
 aq2.alimentar()
 aq2.trabalhar()

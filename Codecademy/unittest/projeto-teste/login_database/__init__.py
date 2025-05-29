@@ -1,8 +1,6 @@
-import unittest
 class wifi:
     def connect():
         print('checking network connection')
-    
     def end():
         print('ending network connection')
 
@@ -10,6 +8,17 @@ class login:
     def __init__(self, user, password):
         self._user = user
         self._password = password  
+
+class db():
+    users = [{'user': 'jonatan','password': '%13q002G'},
+        {'user': 'admin','password': '@157796%'},
+        {'user': 'Kara_wire','password': '53MN23*!'}
+        ]
+def add_user(user = str, password = str):
+    add_data = {}
+    add_data['user'] = user
+    add_data['password'] = password
+    return add_data
 
 class check_in(login):
     def check_in_user_data(self):
@@ -34,33 +43,18 @@ class check_in(login):
             print('Searching your data in our Data Base')
         else:
             print('ACCESS DENIED!')
+    def search_account_in_db():
+        for c in users:
+            if c['user'] == usu and c['password'] == sen:
+                print(f'Bem-vindo(a) {usu}, seu login foi efetuado com sucesso!')
+                break
+        else:
+            print('ERROR! Sua combinação de login não foi encontrada, verifique usuário e senha e tente novamente!')
 
 class ambient:
     def create_ambient():
         wifi.connect()
         print('Creating a safe ambient...')
-    
     def close_ambient():
         print('Closing the ambient...')
         wifi.end()
-
-user = login('admin', '@157796%')
-session = check_in.check_in_user_data(user)
-connection_db_user = check_in.connect_db(session)
-search = check_in.search_db(session)
-print()
-class testing_code(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        ambient.create_ambient()
-    
-    def test_user_data(self, connection = bool):
-        connection = session
-        self.assertTrue(connection)
-
-    @classmethod
-    def tearDownClass(cls):
-        ambient.close_ambient()
-
-if __name__ == "__main__":
-    unittest.main(argv=['first-arg-is-ignored'], exit=False)
