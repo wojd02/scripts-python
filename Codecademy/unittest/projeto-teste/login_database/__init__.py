@@ -14,11 +14,18 @@ class db():
         {'user': 'admin','password': '@157796%'},
         {'user': 'Kara_wire','password': '53MN23*!'}
         ]
-def add_user(user = str, password = str):
-    add_data = {}
-    add_data['user'] = user
-    add_data['password'] = password
-    return add_data
+    
+
+def add_user(user = str, password = str): #código básico para adicionar um usuario na lista, mas n serve para o que preciso :(
+    return {'user': user, 'password': password}
+
+def search_account_in_db(user, password):
+        for c in db.users:
+            if c['user'] == user and c['password'] == password:
+                print(f'Bem-vindo(a) {user}, seu login foi efetuado com sucesso!')
+                break
+        else:
+            print('ERROR! Sua combinação de login não foi encontrada, verifique usuário e senha e tente novamente!')
 
 class check_in(login):
     def check_in_user_data(self):
@@ -43,13 +50,6 @@ class check_in(login):
             print('Searching your data in our Data Base')
         else:
             print('ACCESS DENIED!')
-    def search_account_in_db():
-        for c in users:
-            if c['user'] == usu and c['password'] == sen:
-                print(f'Bem-vindo(a) {usu}, seu login foi efetuado com sucesso!')
-                break
-        else:
-            print('ERROR! Sua combinação de login não foi encontrada, verifique usuário e senha e tente novamente!')
 
 class ambient:
     def create_ambient():
