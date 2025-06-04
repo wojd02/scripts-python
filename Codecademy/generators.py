@@ -11,6 +11,11 @@ def get_id_students():
 
 students = get_id_students()
 for id in students:
-    if id == 1:
-        id = students.send(25)
-    print(id)
+    #if id == 1:
+        #id = students.send(25)
+    if id <= 15: #Método throw
+        print(id)
+    else:
+        #students.throw(ValueError, 'Invalid student ID')
+        students.close()
+
