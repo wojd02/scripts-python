@@ -24,5 +24,8 @@ print(names)
 list_att = [att_1, att_2, att_3, att_4]
 names_set = set(names['Users_names']) #Precisa converter ele para um set para usar o update, pois no NAMES ele funciona como dicionario
 names_set.update(list_att)
+names_set.remove('Andre') # removendo em elemento do set
+#names_set.discard('Junior') # Outro jeito de remover um elemento
 names['Users_names'] = names_set
 print(names)
+
