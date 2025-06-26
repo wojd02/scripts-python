@@ -36,3 +36,10 @@ print(cursos_tabela.loc[cursos_tabela['Curso'] == 'Artes visuais']) #selecionand
 #cursos_tabela.loc[linhas, colunas] estrutura do LOC
 print()
 print(cursos_tabela.loc[cursos_tabela['Curso'] == 'Filosofia', ['Nomes', 'email', 'status aula']])
+cursos_tabela['Mês entrada'] = 0
+print(cursos_tabela)
+cursos_tabela.loc[[1,7,5,9], ['Mês entrada']] = 'fev'
+cursos_tabela.loc[[0,8,6,3], ['Mês entrada']] = 'dez'
+print(cursos_tabela)
+cursos_tabela = cursos_tabela.drop('Mês entrada', axis=1) #axis=0 (linha) / axis=1 (coluna)
+print(cursos_tabela)
