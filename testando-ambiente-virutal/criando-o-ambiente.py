@@ -1,0 +1,1 @@
+#Comando utilizado no terminal = python -m venv venv(nome do ambiente)
