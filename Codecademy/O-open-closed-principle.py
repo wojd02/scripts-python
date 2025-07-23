@@ -15,3 +15,5 @@ rock_in_rio = Palco()
 atração_1 = Artista('Guitarrista')
 atração_2 = Artista('Lady Gaga')
 rock_in_rio.show(atração_2)
+
+

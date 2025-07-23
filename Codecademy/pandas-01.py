@@ -43,3 +43,4 @@ cursos_tabela.loc[[0,8,6,3], ['Mês entrada']] = 'dez'
 print(cursos_tabela)
 cursos_tabela = cursos_tabela.drop('Mês entrada', axis=1) #axis=0 (linha) / axis=1 (coluna)
 print(cursos_tabela)
+
