@@ -1,4 +1,5 @@
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+list_size = len(alphabet)
 
 def message_encoder(message, offset=10):
     encoded_msg = ''
@@ -30,26 +31,39 @@ def message_decoder(message, offset=10):
                 pass
     return decoded_msg
 
-list_size = len(alphabet)
-
-msg = 'jxu evviuj veh jxu iusedt cuiiqwu yi vekhjuud.'
-scn_msg = """ O poeta é um fingidor.
-Finge tão completamente
-Que chega a fingir que é dor
-A dor que deveras sente.
-
-E os que lêem o que escreve,
-Na dor lida sentem bem,
-Não as duas que ele teve,
-Mas só a que eles não têm.
-
-E assim nas calhas da roda
-Gira, a entreter a razão,
-Esse comboio de corda
-Que se chama o coração.
-"""
-
-my_msg = message_encoder(msg)
-print(my_msg)
+def phrase_conversion(message, keyword):
+    keyword_len = len(keyword)
+    conv_msg = ''
+    keyword_index = 0
+    for letter in message.lower():
+        if letter in alphabet:
+            real_index = keyword_index % keyword_len
+            conv_msg += keyword[real_index]
+            keyword_index += 1
+        else:
+            conv_msg += letter
+    return conv_msg
 
 
+mes = 'Barry is the spy'
+keyy = 'dog'
+teste = phrase_conversion(mes, keyy)
+print(mes)
+print(teste)
+
+coded_string = ''
+for index_mes, let_1 in enumerate(mes.lower()):
+    let_2 = teste[index_mes]
+    for index_alphabet, letter_alphabet in enumerate(alphabet):
+        if let_1 == letter_alphabet:
+            count = int(index_alphabet)
+        elif let_2 == letter_alphabet:
+            count_2 = int(index_alphabet)
+        else:
+            pass
+    final_count = (count - count_2) % list_size
+    final_count = list_size - final_count
+    print(final_count)
+    coded_string += alphabet[final_count]
+print(coded_string)
+        
