@@ -44,26 +44,56 @@ def phrase_conversion(message, keyword):
             conv_msg += letter
     return conv_msg
 
-
-mes = 'Barry is the spy'
-keyy = 'dog'
-teste = phrase_conversion(mes, keyy)
-print(mes)
-print(teste)
-
-coded_string = ''
-for index_mes, let_1 in enumerate(mes.lower()):
-    let_2 = teste[index_mes]
-    for index_alphabet, letter_alphabet in enumerate(alphabet):
-        if let_1 == letter_alphabet:
-            count = int(index_alphabet)
-        elif let_2 == letter_alphabet:
-            count_2 = int(index_alphabet)
+def vignere_cipher_encoder(phrase, keyword):
+    coded_string = ''
+    converted_phrase = phrase_conversion(phrase, keyword)
+    for index_phrase, phrase_letter in enumerate(phrase.lower()):
+        converted_phrase_letter = converted_phrase[index_phrase]
+        if phrase_letter in alphabet or converted_phrase_letter in alphabet:
+            for index_alphabet, letter_alphabet in enumerate(alphabet):
+                if phrase_letter == letter_alphabet:
+                    index_letter_phrase = int(index_alphabet)
+                elif converted_phrase_letter == letter_alphabet:
+                    index_letter_converted_phrase = int(index_alphabet)
+                else:
+                    pass
+            index_run = index_letter_phrase - index_letter_converted_phrase
+            index_run = list_size - index_run
+            index_map = (list_size - index_run) % list_size
+            coded_string += alphabet[index_map]
         else:
-            pass
-    final_count = (count - count_2) % list_size
-    final_count = list_size - final_count
-    print(final_count)
-    coded_string += alphabet[final_count]
-print(coded_string)
+            coded_string += phrase_letter
+    return coded_string
+
+def vignere_cipher_decoder(phrase, keyword):
+    coded_string = ''
+    converted_phrase = phrase_conversion(phrase, keyword)
+    for index_phrase, phrase_letter in enumerate(phrase.lower()):
+        converted_phrase_letter = converted_phrase[index_phrase]
+        if phrase_letter in alphabet or converted_phrase_letter in alphabet:
+            for index_alphabet, letter_alphabet in enumerate(alphabet):
+                if phrase_letter == letter_alphabet:
+                    index_letter_phrase = int(index_alphabet)
+                elif converted_phrase_letter == letter_alphabet:
+                    index_letter_converted_phrase = int(index_alphabet)
+                else:
+                    pass
+            index_run = index_letter_phrase + index_letter_converted_phrase
+            index_run = list_size + index_run
+            index_map = (list_size + index_run) % list_size
+            coded_string += alphabet[index_map]
+        else:
+            coded_string += phrase_letter
+    return coded_string
+mes = 'barry is the spy'
+keyy = 'dog'
+#teste = phrase_conversion(mes, keyy)
+teste_2 = vignere_cipher_encoder(mes, keyy)
+print(mes)
+#print(teste)
+print(teste_2)
+
+
+
+
         
