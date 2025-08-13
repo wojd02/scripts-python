@@ -77,25 +77,126 @@ def max_area_affected(dictionary):
             name_area = key
     new_dictionary[name_area] = max_area
     return new_dictionary
+
+def max_counter_death(dictionary):
+    count_deaths = 0
+    name_of_hurricane = ''
+    new_dictionary = {}
+    for hurricane, values in dictionary.items():
+        if count_deaths == 0:
+            count_deaths = values['Deaths']
+            name_of_hurricane = values['Name']
+        elif count_deaths < values['Deaths']:
+            count_deaths = values['Deaths']
+            name_of_hurricane = values['Name']
+    new_dictionary[name_of_hurricane] = {'Death': count_deaths}
+    return new_dictionary
+
+def death_metrics(dictionary):
+    mortality_rating = 0
+    new_dictionary = {}
+    for hurricane, values in dictionary.items():
+        if values['Deaths'] <= 100:
+            mortality_rating = 1
+            name_of_hurricane = values['Name']
+            new_dictionary[mortality_rating]= values
+        elif values['Deaths'] <= 500:
+            mortality_rating = 2
+            new_dictionary[mortality_rating]= values
+        elif values['Deaths'] <= 1000:
+            mortality_rating = 3
+            new_dictionary[mortality_rating]= values
+        elif values['Deaths'] <= 10000:
+            mortality_rating = 4
+            new_dictionary[mortality_rating]= values
+        else:
+            mortality_rating = 5
+            new_dictionary[mortality_rating]= values
+    return new_dictionary
+
+def max_damage_hurricane(dictionary):
+    most_damage = 0
+    new_dictionary = {}
+    name_of_hurricane = ''
+    for hurricane, values in dictionary.items():
+        if values['Damage'] == 'Damages not recorded':
+            pass
+        else:
+            if most_damage == 0:
+                most_damage = values['Damage']
+                name_of_hurricane = values['Name']
+            elif most_damage < values['Damage']:
+                most_damage = values['Damage']
+                name_of_hurricane = values['Name']
+    new_dictionary[name_of_hurricane] = {'Damage': most_damage}
+    return new_dictionary
+
+def costs_metrics(dictionary):
+    cost_rating = 0
+    rating_by_damage = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+    for hurricane, values in dictionary.items():
+        record = {'Name': values['Name'], 'Month': values['Month'], 'Max Sustained Wind': values['Max Sustained Wind'], 'Areas Affected': values['Areas Affected'], 'Damage': values['Damage'], 'Deaths': values['Deaths']}
+        if values['Damage'] == 'Damages not recorded':
+            cost_rating = 0
+            rating_by_damage[cost_rating].append(record)
+        else:
+            if values['Damage'] <= 100000000:
+                cost_rating = 1
+                rating_by_damage[cost_rating].append(record)
+            elif values['Damage'] <= 1000000000:
+                cost_rating = 2
+                rating_by_damage[cost_rating].append(record)
+            elif values['Damage'] <= 10000000000:
+                cost_rating = 3
+                rating_by_damage[cost_rating].append(record)
+            elif values['Damage'] <= 50000000000:
+                cost_rating = 4
+                rating_by_damage[cost_rating].append(record)
+            else:
+                cost_rating = 5
+                rating_by_damage[cost_rating].append(record)
+    return rating_by_damage
+
 #converted damages
 converted_list = damage_conversion(damages)
-#print(converted_list)
+print(converted_list)
+print()
 
 #dictionary hurricanes
-hurricane_info = create_dictionary(names, months, years, max_sustained_winds, areas_affected, damages, deaths)
-#print(hurricane_info)
-#print()
+hurricane_info = create_dictionary(names, months, years, max_sustained_winds, areas_affected, converted_list, deaths)
+print(hurricane_info)
+print()
 
 #dictionary hurricanes ordered by year
 hurricane_info_year = create_dictionary_year(names, months, years, max_sustained_winds, areas_affected, damages, deaths)
-#print(hurricane_info_year[1933])
+print(hurricane_info_year)
+print()
 
 #counting affected areas
 counter_of_areas = count_affected_areas(areas_affected)
 print(counter_of_areas)
+print()
 
 #most affected area
 most_affected_area = max_area_affected(counter_of_areas)
 print(most_affected_area)
+print()
 
+#deadliest hurricane
+deaths_hurricane = max_counter_death(hurricane_info)
+print(deaths_hurricane)
+print()
 
+#hurricane rating
+hurricane_rating = death_metrics(hurricane_info)
+print(hurricane_rating[5])
+print()
+
+#maximum damage
+max_damage = max_damage_hurricane(hurricane_info)
+print(max_damage)
+print()
+
+#cost rating
+rating_costs = costs_metrics(hurricane_info)
+print(rating_costs[5])
