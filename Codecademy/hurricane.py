@@ -132,29 +132,22 @@ def max_damage_hurricane(dictionary):
     return new_dictionary
 
 def costs_metrics(dictionary):
-    cost_rating = 0
     rating_by_damage = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
     for hurricane, values in dictionary.items():
         record = {'Name': values['Name'], 'Month': values['Month'], 'Max Sustained Wind': values['Max Sustained Wind'], 'Areas Affected': values['Areas Affected'], 'Damage': values['Damage'], 'Deaths': values['Deaths']}
         if values['Damage'] == 'Damages not recorded':
-            cost_rating = 0
-            rating_by_damage[cost_rating].append(record)
+            rating_by_damage[0].append(record)
         else:
             if values['Damage'] <= 100000000:
-                cost_rating = 1
-                rating_by_damage[cost_rating].append(record)
+                rating_by_damage[1].append(record)
             elif values['Damage'] <= 1000000000:
-                cost_rating = 2
-                rating_by_damage[cost_rating].append(record)
+                rating_by_damage[2].append(record)
             elif values['Damage'] <= 10000000000:
-                cost_rating = 3
-                rating_by_damage[cost_rating].append(record)
+                rating_by_damage[3].append(record)
             elif values['Damage'] <= 50000000000:
-                cost_rating = 4
-                rating_by_damage[cost_rating].append(record)
+                rating_by_damage[4].append(record)
             else:
-                cost_rating = 5
-                rating_by_damage[cost_rating].append(record)
+                rating_by_damage[5].append(record)
     return rating_by_damage
 
 #converted damages
